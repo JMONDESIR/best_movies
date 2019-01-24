@@ -1,7 +1,8 @@
 
 let container = document.getElementById("container")
-let heading = document.createElement("section")
+let heading = document.createElement("h1")
 heading.textContent = "MY FAVORITE MOVIES"
+heading.setAttribute("id", "heading")
 container.appendChild(heading)
 
 let greatMovies = [
@@ -29,14 +30,19 @@ let greatMovies = [
 
 greatMovies.forEach(function (movieEntries) {
   const cardContainer = document.createElement("div")
-  let title = document.createElement("h3")
+
+  let title = document.createElement("h2")
   title.textContent = movieEntries.name
-  let release = document.createElement("h5")
+  title.setAttribute("id", "title")
+
+  let release = document.createElement("span")
+  release.setAttribute("id", "title")
   release.textContent = movieEntries.releaseDate
+
   let link = document.createElement('a')
   link.setAttribute("href", movieEntries.url)
   link.setAttribute("target", "_blank")
-  link.textContent = movieEntries.url
+  link.textContent = "Check it out"
 
   container.appendChild(cardContainer)
 
